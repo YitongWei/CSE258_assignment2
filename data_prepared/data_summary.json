@@ -1,0 +1,108 @@
+{
+  "validation_start": "2010-04-25",
+  "test_start": "2012-09-11",
+  "recipe_cleaning": {
+    "raw": 231637,
+    "retained": 231637
+  },
+  "interaction_cleaning": {
+    "raw": 1132367,
+    "retained": 1070294,
+    "zero_rating": 60847,
+    "rating_before_publication": 1226
+  },
+  "raw_rating_distribution": {
+    "0": 60847,
+    "1": 12818,
+    "2": 14123,
+    "3": 40855,
+    "4": 187360,
+    "5": 816364
+  },
+  "splits": {
+    "all_clean": {
+      "ratings": 1070294,
+      "users": 196044,
+      "recipes": 226451,
+      "first_date": "2000-01-25",
+      "last_date": "2018-12-20",
+      "rating_distribution": {
+        "1": 12815,
+        "2": 14110,
+        "3": 40747,
+        "4": 186986,
+        "5": 815636
+      }
+    },
+    "train": {
+      "ratings": 748910,
+      "users": 97423,
+      "recipes": 179771,
+      "first_date": "2000-01-25",
+      "last_date": "2010-04-24",
+      "rating_distribution": {
+        "1": 6040,
+        "2": 8895,
+        "3": 28869,
+        "4": 138368,
+        "5": 566738
+      }
+    },
+    "validation_all": {
+      "ratings": 160830,
+      "users": 37855,
+      "recipes": 76066,
+      "first_date": "2010-04-25",
+      "last_date": "2012-09-10",
+      "rating_distribution": {
+        "1": 1507,
+        "2": 1936,
+        "3": 5536,
+        "4": 25929,
+        "5": 125922
+      }
+    },
+    "validation_first_day": {
+      "ratings": 24252,
+      "users": 3695,
+      "recipes": 23893,
+      "first_date": "2010-04-25",
+      "last_date": "2012-09-10",
+      "rating_distribution": {
+        "1": 109,
+        "2": 178,
+        "3": 797,
+        "4": 4702,
+        "5": 18466
+      }
+    },
+    "test_all": {
+      "ratings": 160554,
+      "users": 82910,
+      "recipes": 61161,
+      "first_date": "2012-09-11",
+      "last_date": "2018-12-20",
+      "rating_distribution": {
+        "1": 5268,
+        "2": 3279,
+        "3": 6342,
+        "4": 22689,
+        "5": 122976
+      }
+    },
+    "test_first_day": {
+      "ratings": 11668,
+      "users": 1872,
+      "recipes": 11489,
+      "first_date": "2012-09-11",
+      "last_date": "2018-12-17",
+      "rating_distribution": {
+        "1": 70,
+        "2": 90,
+        "3": 415,
+        "4": 2192,
+        "5": 8901
+      }
+    }
+  }
+}

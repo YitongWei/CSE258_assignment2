@@ -1,0 +1,6 @@
+/RAW_recipes.csv
+/RAW_interactions.csv
+/data_prepared/**/*.csv
+/prepared/
+__pycache__/
+.ipynb_checkpoints/
