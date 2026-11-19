@@ -1,0 +1,40 @@
+{
+  "primary_metric": "MSE",
+  "submit_model": "best_c",
+  "user_mean_k": 5.0,
+  "user_median_k": 2.0,
+  "svd_dim": 128,
+  "best_mae": {
+    "family": "B",
+    "base": "user_median",
+    "sim_k": 20.0,
+    "alpha": 1.0,
+    "use_global_ridge": 0,
+    "residual_shift": 0.35,
+    "MAE": 0.28591651952425384,
+    "MSE": 0.4192123362112961
+  },
+  "best_mse": {
+    "family": "A",
+    "base": "user_mean_feature",
+    "sim_k": 5.0,
+    "alpha": 100.0,
+    "use_global_ridge": 1,
+    "residual_shift": 0.0,
+    "MAE": 0.3781678106147902,
+    "MSE": 0.32531951186041597
+  },
+  "best_c": {
+    "sim_k": 20.0,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "max_iter": 200,
+    "min_samples_leaf": 50,
+    "l2_regularization": 0.0,
+    "use_global_ridge": 1,
+    "MAE": 0.3779369162214448,
+    "MSE": 0.32443031416645224,
+    "fit_sec": 5.27
+  },
+  "submit_family": "C"
+}

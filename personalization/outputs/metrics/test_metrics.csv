@@ -1,0 +1,5 @@
+model,MAE,MAE_95CI,MSE,MSE_95CI,tuned_on,family,config
+personalization_best_mae,0.2947264507085863,"[0.2671, 0.3251]",0.4396552322708846,"[0.3896, 0.4912]",MAE,B,"{""family"": ""B"", ""base"": ""user_median"", ""sim_k"": 20.0, ""alpha"": 1.0, ""use_global_ridge"": 0, ""residual_shift"": 0.35, ""MAE"": 0.28591651952425384, ""MSE"": 0.4192123362112961}"
+personalization_best_mse,0.38478312819284916,"[0.3577, 0.4150]",0.34954855373136157,"[0.3131, 0.3896]",MSE,A,"{""family"": ""A"", ""base"": ""user_mean_feature"", ""sim_k"": 5.0, ""alpha"": 100.0, ""use_global_ridge"": 1, ""residual_shift"": 0.0, ""MAE"": 0.3781678106147902, ""MSE"": 0.32531951186041597}"
+ref_user_mean,0.40256801488873106,"[0.3759, 0.4315]",0.35364472200171976,"[0.3171, 0.3924]",baseline-ref,ref,{}
+ref_user_median,0.2935378813849846,"[0.2660, 0.3239]",0.44459204662324303,"[0.3940, 0.4985]",baseline-ref,ref,{}
