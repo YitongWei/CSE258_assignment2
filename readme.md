@@ -4,6 +4,8 @@
 
 ## 数据文件
 
+首次运行项目时，先下载准备好的 ZIP，再解压到仓库根目录。解压后确认仓库根目录能找到 `data_prepared/shared/train.csv` 和 `data_prepared/wyt/test_labels.csv`。不要再套一层同名目录。ZIP 包含训练、验证和测试文件，可直接开始建模。[从 Google Drive 下载 data_prepared ZIP](https://drive.google.com/file/d/1apDKP6D0-3NiZOuLO9FwZEcVs-DocPVb/view?usp=drive_link)
+
 数据来自 [Food.com Recipes and User Interactions](https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions)。`RAW_recipes.csv` 有 231,637 条菜谱，包含食材与发布日期。`RAW_interactions.csv` 有 1,132,367 条互动，包含用户、菜谱、评分日期和星级。按 `id ↔ recipe_id` 连接后，排除 60,847 条零评分和 1,226 条早于菜谱发布的评分，保留 **1,070,294 条有效评分**。
 
 | 文件                                       | 怎么用                                                                                                             |
@@ -26,7 +28,7 @@
 | `personalization/` | 队友 B 存放个性化模型代码、实验 notebook 和结果。           |
 | `data_prepared/`   | 三人共用数据，按上表路径读取。                              |
 
-代码和 notebook 通过私有 GitHub 仓库同步。三人直接在 `main` 上各自维护自己的目录，首次开工时创建自己的文件夹。每次开始前先运行 `git pull --ff-only`。改完后，只暂存自己的目录。以队友 A 为例：
+代码和 notebook 通过此 GitHub 仓库同步。三人直接在 `main` 上各自维护自己的目录，首次开工时创建自己的文件夹。每次开始前先运行 `git pull --ff-only`。改完后，只暂存自己的目录。以队友 A 为例：
 
 ```bash
 git add baseline/
@@ -36,7 +38,7 @@ git push
 
 如果推送时远程已有队友的新提交，先运行 `git pull --rebase` 同步，再推送。各自完成实验后，wyt 将结果合进最终 notebook。
 
-CSV 通过小组共享盘发一份。下载后按上表放回项目里的对应位置，三个目录的代码共用这份数据。`.gitignore` 会让这些 CSV 留在本地。数据更新时，在 README 记下版本，再通过共享盘替换数据。
+CSV 通过上方的 Google Drive 链接分发。三个目录里的代码共用解压后的 `data_prepared/`，CSV 由 `.gitignore` 排除。先用验证集确定模型和参数，生成测试预测后再读取真实测试标签。
 
 ## 为什么按时间分三段
 
