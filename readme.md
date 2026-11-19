@@ -1,4 +1,4 @@
-# CSE258R Assignment 2｜Food.com 数据使用说明
+# CSE258R Assignment 2｜Food.com 数据使用及协作说明
 
 **研究问题**：对于已有评分历史的用户，能否根据食材和个人口味预测其对尚无历史评分的菜谱会给几星？
 
@@ -6,25 +6,25 @@
 
 数据来自 [Food.com Recipes and User Interactions](https://www.kaggle.com/shuyangli94/food-com-recipes-and-user-interactions)。`RAW_recipes.csv` 有 231,637 条菜谱，包含食材与发布日期。`RAW_interactions.csv` 有 1,132,367 条互动，包含用户、菜谱、评分日期和星级。按 `id ↔ recipe_id` 连接后，排除 60,847 条零评分和 1,226 条早于菜谱发布的评分，保留 **1,070,294 条有效评分**。
 
-| 文件 | 怎么用 |
-| --- | --- |
-| `data_prepared/shared/train.csv` | 用全部 **748,910** 条早期评分训练 baseline 和个性化模型。 |
-| `data_prepared/shared/validation.csv` | 共 **160,830** 条中期评分。先用其中标记为 1 的 **24,252** 条比较模型和选参数，再把整张表加入最终训练。 |
-| `data_prepared/shared/test_features.csv` | 用定稿模型为 **11,668** 条晚期样本预测星级，输出 `row_id,prediction`。 |
-| `data_prepared/wyt/test_labels.csv` | 定稿并产出测试预测后，队友都可用这张表按 `row_id` 对齐真实星级，检查漏行或重复，再算最终 MAE。 |
-| `data_prepared/wyt/ratings_clean.csv` | 全部有效评分的清洗总表，用于数据探索与核查。建模使用上面的时间划分。 |
-| `data_prepared/data_summary.json` | 清洗计数、各阶段规模和评分分布，可直接用于 notebook 图表。 |
+| 文件                                       | 怎么用                                                                                                             |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `data_prepared/shared/train.csv`         | 用全部 **748,910** 条早期评分训练 baseline 和个性化模型。                                                    |
+| `data_prepared/shared/validation.csv`    | 共 **160,830** 条中期评分。先用其中标记为 1 的 **24,252** 条比较模型和选参数，再把整张表加入最终训练。 |
+| `data_prepared/shared/test_features.csv` | 用定稿模型为 **11,668** 条晚期样本预测星级，输出 `row_id,prediction`。                                     |
+| `data_prepared/wyt/test_labels.csv`      | 定稿并产出测试预测后，队友都可用这张表按 `row_id` 对齐真实星级，检查漏行或重复，再算最终 MAE。                   |
+| `data_prepared/wyt/ratings_clean.csv`    | 全部有效评分的清洗总表，用于数据探索与核查。建模使用上面的时间划分。                                               |
+| `data_prepared/data_summary.json`        | 清洗计数、各阶段规模和评分分布，可直接用于 notebook 图表。                                                         |
 
 `row_id` 标识一条评分记录，`user_id` 和 `recipe_id` 标识用户和菜谱。`ingredients` 是 JSON 列表字符串，可用 `json.loads` 读成食材列表。`date` 是评分日，`submitted` 是菜谱发布日期。
 
 ## 三人协作与同步
 
-| 目录 | 负责内容 |
-| --- | --- |
-| `wyt/` | wyt 维护数据处理、统一评估，并整合最终 notebook 和 README。 |
-| `baseline/` | 队友 A 存放基线代码、实验 notebook 和结果。 |
-| `personalization/` | 队友 B 存放个性化模型代码、实验 notebook 和结果。 |
-| `data_prepared/` | 三人共用数据，按上表路径读取。 |
+| 目录                 | 负责内容                                                    |
+| -------------------- | ----------------------------------------------------------- |
+| `wyt/`             | wyt 维护数据处理、统一评估，并整合最终 notebook 和 README。 |
+| `baseline/`        | 队友 A 存放基线代码、实验 notebook 和结果。                 |
+| `personalization/` | 队友 B 存放个性化模型代码、实验 notebook 和结果。           |
+| `data_prepared/`   | 三人共用数据，按上表路径读取。                              |
 
 代码和 notebook 通过私有 GitHub 仓库同步。三人直接在 `main` 上各自维护自己的目录，首次开工时创建自己的文件夹。每次开始前先运行 `git pull --ff-only`。改完后，只暂存自己的目录。以队友 A 为例：
 
