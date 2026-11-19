@@ -1,0 +1,10 @@
+{
+  "user_mean_k": 5,
+  "user_median_k": 2,
+  "ridge": {
+    "analyzer": "word",
+    "min_df": 5,
+    "alpha": 300.0
+  },
+  "ridge_shift": 0.65
+}
